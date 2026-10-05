@@ -1,46 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Online Registration System</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Online Registration System - Professor Portal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="auth" id="auth"><div class="box">
-  <div style="display:flex;gap:12px;align-items:center"><div class="crest">OCC</div><div><b style="font-size:18px">Online Registration System</b><div class="empty">Student portal</div></div></div>
-  <div class="tabs"><button class="on" id="t1">Sign in</button><button id="t2">Create account</button></div>
-  <form id="lf">
-    <label for="lid">Student ID</label><input id="lid" autocomplete="username" required>
-    <label for="lpw">Password</label><input id="lpw" type="password" autocomplete="current-password" required>
-    <div class="msg hide" id="lerr"></div><button class="pill" style="width:100%;margin-top:16px">Sign in</button>
-  </form>
-  <form id="sf" class="hide">
-    <label for="sn">Full name</label><input id="sn" placeholder="Last name, First name" required>
-    <label for="sid">Student ID</label><input id="sid" placeholder="e.g. 2024-00123" required>
-    <label for="se">Email</label><input id="se" type="email" autocomplete="email" required>
-    <div class="msg hide" id="serr"></div><button class="pill" style="width:100%;margin-top:16px">Get temporary password</button>
-  </form>
-</div></div>
+  <!-- Sign in / Create account -->
+  <div class="auth" id="auth">
+    <div class="box">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="crest">OCC</div>
+        <div>
+          <b style="font-size:18px">Online Registration System</b>
+          <div class="empty">Professor / Staff portal</div>
+        </div>
+      </div>
 
-<div class="auth hide" id="change"><div class="box">
-  <b style="font-size:20px">Set a new password</b><p class="empty" style="margin-top:4px">Replace your temporary password to continue.</p>
-  <form id="cf"><label for="np">New password (8+ characters)</label><input id="np" type="password" minlength="8" autocomplete="new-password" required>
-  <label for="np2">Confirm new password</label><input id="np2" type="password" autocomplete="new-password" required>
-  <div class="msg hide" id="cerr"></div><button class="pill" style="width:100%;margin-top:16px">Save password</button></form>
-</div></div>
+      <div class="tabs">
+        <button class="on" id="t1">Sign in</button>
+        <button id="t2">Create account</button>
+      </div>
 
-<div class="shell hide" id="app">
-  <aside><div class="crest">OCC</div>
-    <nav id="nav"><button data-go="home">DASHBOARD</button><button data-go="consult">CONSULTATION</button><button data-go="act">ACTIVITIES</button><button data-go="profile">PROFILE</button><button data-go="faq">FAQ</button></nav>
-    <button class="out" id="out">⇥ LOG OUT</button></aside>
-  <main><header><h1><span style="font-size:26px">🎓</span><span id="title">STUDENT DASHBOARD</span></h1><button id="bell" aria-label="Notifications">🔔</button><div class="who" id="who"></div></header><div id="view"></div></main>
-</div>
-<dialog id="dlg"><div id="dbody"></div><div style="text-align:right;margin-top:14px"><button class="pill out" id="dx">Close</button></div></dialog>
-<div class="toast" id="toast"></div>
+      <form id="lf">
+        <label for="lid">Staff ID</label>
+        <input id="lid" autocomplete="username" required>
+        <label for="lpw">Password</label>
+        <input id="lpw" type="password" autocomplete="current-password" required>
+        <div class="msg hide" id="lerr"></div>
+        <button class="pill" style="width:100%;margin-top:16px">Sign in</button>
+      </form>
 
-<script src="script.js"></script>
+      <form id="sf" class="hide">
+        <label for="sid">Staff ID</label>
+        <input id="sid" placeholder="e.g. 05" required>
+        <label for="se">Email</label>
+        <input id="se" type="email" autocomplete="email" required>
+        <div class="msg hide" id="serr"></div>
+        <button class="pill" style="width:100%;margin-top:16px">Get temporary password</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Forced password change -->
+  <div class="auth hide" id="change">
+    <div class="box">
+      <b style="font-size:20px">Set a new password</b>
+      <p class="empty" style="margin-top:4px">Replace your temporary password to continue.</p>
+      <form id="cf">
+        <label for="np">New password (8+ characters)</label>
+        <input id="np" type="password" minlength="8" autocomplete="new-password" required>
+        <label for="np2">Confirm new password</label>
+        <input id="np2" type="password" autocomplete="new-password" required>
+        <div class="msg hide" id="cerr"></div>
+        <button class="pill" style="width:100%;margin-top:16px">Save password</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Professor dashboard -->
+  <div class="shell hide" id="app">
+    <aside>
+      <div class="crest">OCC</div>
+      <nav id="nav">
+        <button data-go="home">DASHBOARD</button>
+        <button data-go="queue">QUEUE</button>
+        <button data-go="schedule">SCHEDULE</button>
+        <button data-go="data">DATA</button>
+        <button data-go="profile">PROFILE</button>
+      </nav>
+      <button class="out" id="out">⇥ LOG OUT</button>
+    </aside>
+
+    <main>
+      <header>
+        <h1><span style="font-size:26px">🎓</span><span>PROFESSOR DASHBOARD</span></h1>
+        <button id="bell" aria-label="Notifications">🔔</button>
+        <div class="who" id="who"></div>
+      </header>
+      <div id="view"></div>
+    </main>
+  </div>
+
+  <dialog id="dlg">
+    <div id="dbody"></div>
+    <div style="text-align:right;margin-top:14px"><button class="pill out" id="dx">Close</button></div>
+  </dialog>
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
