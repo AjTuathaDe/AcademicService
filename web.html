@@ -1,0 +1,742 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>FRIEND-FEE BREW</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+
+
+    <div class="coffee-animation">
+      <span>☕</span>
+      <span>☕</span>
+      <span>☕</span>
+      <span>☕</span>
+      <span>☕</span>
+    </div>
+
+
+    <div class="marquee">
+      <p>☕ Welcome to Friend-fee Brew • Fresh Coffee • Relax • Enjoy • Study • Chill ☕</p>
+    </div>
+
+    
+    <header id="header">
+      <div class="header-content-div">
+   <span id="menu-btn" class="scroll-zoom" onclick="openNav()" >☰</span>
+     
+
+        <a href="#home-sec">
+          <img src="friendfeelogo.png" id="header-img" class="scroll-zoom">
+        </a>
+
+  <div id="sideNav" class="sidenav scroll-zoom">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+    <a href="#" onclick="openRating()">⭐ Rate Us</a>
+    <a href="#" onclick="openPromos()">🎁 Promos</a>
+       
+  
+  </div>
+
+
+  <a href="#" class="scroll-zoom" onclick="openTracker()">☕ Order Tracker</a>
+ 
+
+  <!-- ORDER TRACKER POPUP -->
+
+  <div id="trackerPopup" class="popup">
+
+    <div class="tracker-container">
+
+      <span class="close" onclick="closeTracker()">×</span>
+
+      <h2>☕ Friend-fee Brew Order</h2>
+
+      <p id="order-status">Waiting for order...</p>
+
+      <!-- PROGRESS BAR -->
+      <div class="progress-bar">
+        <div id="progress"></div>
+      </div>
+
+      <!-- ORDER STEPS -->
+
+      <div class="tracker-steps">
+
+        <div class="step" id="step1">📦 Order Received</div>
+        <div class="step" id="step2">☕ Preparing Coffee</div>
+        <div class="step" id="step3">🛵 Out for Delivery</div>
+        <div class="step" id="step4">✅ Delivered</div>
+
+      </div>
+
+      <p id="time-estimate">Estimated time: 8 minutes</p>
+
+      <button onclick="startOrder()">Start Order</button>
+
+    </div>
+
+  </div>
+
+        <div id="cart-icon" class="scroll-zoom">
+          🛒
+          <span id="cart-count">0</span>
+        </div>
+
+        <nav id="nav-bar" class="scroll-zoom">
+          <a href="#about" class="nav-link">ABOUT</a>
+          <a href="#varieties" class="nav-link">MENU</a>
+          <a href="#our-service" class="nav-link">SERVICES</a>
+          <a href="#mission" class="nav-link">MISSION</a>
+          <a href="#history" class="nav-link">OUR STORY</a>
+        </nav>
+     
+        <div class="user-menu">
+  <div class="user-icon" onclick="toggleUserMenu()">👤</div>
+
+  <div id="userDropdown" class="user-dropdown">
+  <p id="userGreeting">👋 Hello, Guest</p>
+<button onclick="openAdminLogin()">⚙️ Admin Login</button>
+<button onclick="openCashierLogin()">💳 Cashier Login</button>
+  <button onclick="logout()">🚪 Logout</button>
+</div>
+</div>
+
+      </div>
+      
+      <div id="cart" style="display:none;">
+    <h3>🛒 Cart</h3>
+    <ul id="cart-items"></ul>
+    <p><b>Total: ₱<span id="total">0</span></b></p>
+    <button type="button" onclick="checkout()">Checkout</button>
+  </div>
+
+    </header>
+
+    <main>
+
+      <!-- HERO IMAGE SLIDER -->
+   <div class="slider">
+
+        <div class="list">
+
+        
+            <div class="item">
+                <img src="IcedCoffee.png" alt="">
+            
+                <div class="content">
+                    <div class="title">ICE COFFEE</div>
+                    <div class="type">COLD COFFEE</div>
+                    <div class="description">
+                        MASARAP
+                    </div>
+                        <button class="but" onclick="window.location.href='#varieties';">SEE MORE</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="cappuccino.png" alt="">
+
+                <div class="content">
+                    <div class="title">CAPPUCCINO</div>
+                    <div class="type">COFFEE</div>
+                    <div class="description">
+                        Yummy          
+                    </div>
+                       <button class="but" onclick="window.location.href='#varieties';">SEE MORE</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="Americano.png" alt="">
+
+                <div class="content">
+                    <div class="title">AMERICANO</div>
+                    <div class="type">COFFEE</div>
+                    <div class="description">
+                        MAPAIT
+                    </div>
+                       <button class="but" onclick="window.location.href='#varieties';">SEE MORE</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="Latte.png" alt="">
+
+                <div class="content">
+                    <div class="title">SPANISH LATTE</div>
+                    <div class="type">COFFEE</div>
+                    <div class="description">
+                        Best Seller
+                    </div>
+                       <button class="but" onclick="window.location.href='#varieties';">SEE MORE</button>
+                  </div>
+            </div>
+             <div class="item">
+                <img src="taroo.png" alt="">
+
+                <div class="content">
+                    <div class="title">TARO</div>
+                    <div class="type">MILKTEA</div>
+                    <div class="description">
+                        Best Seller
+                    </div>
+                       <button class="but" onclick="window.location.href='#varieties';">SEE MORE</button>
+                  </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="thumbnail">
+
+            <div class="item">
+                <img src="IcedCoffee.png" alt="">
+            </div>
+        
+            <div class="item">
+                <img src="cappuccino.png" alt="">
+            </div>
+            <div class="item">
+                <img src="Americano.png" alt="">
+            </div>
+            <div class="item">
+                <img src="Latte.png" alt="">
+            </div>
+             <div class="item">
+                <img src="taroo.png" alt="">
+            </div>
+            
+        
+        </div>
+
+
+        <div class="nextPrevArrows">
+            <button class="prev">  < </button>
+            <button class="next">  > </button>
+        </div>
+
+
+    </div>
+
+      <!-- HERO SECTION -->
+      <section id="home-sec" class="home-sec ">
+
+        <div class="eye-grabber-img">
+
+          <div class="coffee-cup scroll-zoom">
+            <img src="logo.png">
+            <div class="steam steam1"></div>
+            <div class="steam steam2"></div>
+            <div class="steam steam3"></div>
+          </div>
+
+        </div>
+
+        <div class="eye-grabber scroll-zoom">
+          <h1>Freshly Brewed Coffee ☕</h1>
+          <h2>Relax, sip, and enjoy your perfect cup.</h2>
+          <button class="btn" onclick="window.location.href='#varieties';">Order Now</button>
+        </div>
+
+      </section>
+
+      <!-- MENU -->
+      <section id="varieties">
+        <h2 style="text-align: center; font-weight: bolder; font-size: 50px; font-family: montserrat; margin:60px 0 30px; margin-top: 5px; color: white;">OUR MENU</h2>
+
+        <div class="menu-filter scroll-zoom">
+          <button class="filter-btn active" onclick="filterMenu('all', event)">All</button>
+          <button class="filter-btn" onclick="filterMenu('hot', event)">Hot Coffee</button>
+          <button class="filter-btn" onclick="filterMenu('iced', event)">Iced Coffee</button>
+         <button class="filter-btn" onclick="filterMenu('milky', event)">Milktea</button>
+        </div>
+
+        <div class="menu-container scroll-zoom">
+
+          <div class="tile hot scroll-zoom">
+            <img src="Espresso.png">
+            <h3>Espresso</h3>
+            <p class="price">₱59</p>
+            <button class="btn" onclick="addToCart('Espresso',59)">Add to Cart</button>
+          </div>
+
+          <div class="tile hot scroll-zoom">
+            <img src="Latte.png">
+            <h3>Latte</h3>
+            <p class="price">₱59</p>
+            <button class="btn" onclick="addToCart('Latte',59)">Add to Cart</button>
+          </div>
+
+          <div class="tile hot scroll-zoom">
+            <img src="cappuccino.png">
+            <h3>Cappuccino</h3>
+            <p class="price">₱59</p>
+            <button class="btn" onclick="addToCart('Cappuccino',59)">Add to Cart</button>
+          </div>
+
+          <div class="tile iced scroll-zoom">
+            <img src="IcedCoffee.png">
+            <h3>Iced Coffee</h3>
+            <p class="price">₱49</p>
+            <button class="btn" onclick="addToCart('Iced Coffee',49)">Add to Cart</button>
+          </div>
+
+          <div class="tile iced scroll-zoom">
+            <img src="iced americano.jpg">
+            <h3>Iced Americano</h3>
+            <p class="price">₱49</p>
+            <button class="btn" onclick="addToCart('Iced Americano',49)">Add to Cart</button>
+          </div>
+
+          <div class="tile iced scroll-zoom">
+            <img src="mochaiced.jpg">
+            <h3>Iced Mocha</h3>
+            <p class="price">₱49</p>
+            <button class="btn" onclick="addToCart('Iced Mocha',49)">Add to Cart</button>
+          </div>
+
+           <div class="tile iced scroll-zoom">
+            <img src="hazelnut.jpg">
+            <h3>HazelNut</h3>
+            <p class="price">₱49</p>
+            <button class="btn" onclick="addToCart('Ice Hazelnut',49)">Add to Cart</button>
+          </div>
+
+          
+           <div class="tile milky scroll-zoom">
+            <img src="taroo.png">
+            <h3>Taro MIlktea</h3>
+            <p class="price">₱59</p>
+            <button class="btn" onclick="addToCart('Taro MIlktea', 59)">Add to Cart</button>
+          </div>
+
+          <div class="tile milky scroll-zoom">
+            <img src="matchaa.jpg">
+            <h3>Matcha Milktea</h3>
+            <p class="price">₱59</p>
+            <button class="btn" onclick="addToCart('Matcha MIlktea', 59)">Add to Cart</button>
+          </div>
+
+          <div class="tile milky scroll-zoom">
+            <img src="ccream.jpg">
+            <h3>Cookies and Cream</h3>
+            <p class="price">₱59</p>
+            <button class="btn" onclick="addToCart('Cookies and Cream', 59)">Add to Cart</button>
+          </div>
+
+        </div>
+      </section>
+  
+      <!-- ABOUT -->
+      <section id="about" class="scroll-zoom">
+        <h2 class="section-heading2">ABOUT US</h2>
+         <div class="menu-container scroll-zoom" >
+          <div class="tilee">
+          
+          Friend-fee Brew is a cozy coffee shop that serves high-quality coffee made from premium beans.
+          Our goal is to provide a relaxing space where you can enjoy, study, and bond with friends.
+      
+          </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="our-service" class="scroll-zoom">
+        <h2 class="section-heading">OUR SERVICES</h2>
+
+        <div class="menu-container scroll-zoom" >
+          <div class="tile">
+            <h3>☕ Fresh Coffee</h3>
+            <p>We serve freshly brewed coffee every day.</p>
+          </div>
+          <div class="tile">
+            <h3>🚚 Delivery</h3>
+            <p>Order online and get your coffee delivered fast.</p>
+          </div>
+          <div class="tile">
+            <h3>📶 Free WiFi</h3>
+            <p>Perfect place for studying and working.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MISSION -->
+      <section id="mission" class="scroll-zoom">
+        <h2 class="section-heading2">MISSION</h2>
+        <p style="font-size: 20px; color: white">
+          Our mission is to serve high-quality coffee and create a warm and welcoming space
+          for everyone to enjoy and relax.
+        </p>
+      </section>
+
+      <!-- HISTORY -->
+     <section id="history" class="history-section scroll-zoom">
+
+  <h2 class="section-heading">OUR STORY</h2>
+
+  <div class="history-container">
+
+    <!-- IMAGE -->
+    <div class="history-last-image">
+      <img src="history1.png" alt="Coffee Story">
+    </div>
+
+    <!-- TEXT -->
+    <div class="history-text">
+      <h3>☕ How Friend-fee Brew Started</h3>
+      <p>
+        Friend-fee Brew began as a simple dream — to create a cozy place where
+        people can relax, study, and enjoy high-quality coffee.
+      </p>
+      <p>
+        From a small idea, it grew into a favorite hangout spot for students and
+        coffee lovers, offering affordable yet premium coffee experiences.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- SECOND BLOCK -->
+  <div class="history-container reverse">
+
+    <div class="history-last-image">
+      <img src="history2.png" alt="Coffee Process">
+    </div>
+
+    <div class="history-text">
+      <h3>🌍 Our Coffee Philosophy</h3>
+      <p>
+        We believe coffee should be simple, enjoyable, and accessible to everyone.
+        Every cup is carefully prepared to bring out the best flavor.
+      </p>
+      <p>
+        Our goal is to spread a warm coffee culture where every sip feels like home.
+      </p>
+    </div>
+<!-- FINAL SECTION -->
+<div class="history-last">
+
+  <div class="history-last-text">
+    <h3>☕ Your Daily Coffee Escape</h3>
+    <p>
+      Step into a place where every cup is crafted with care and passion.
+    </p>
+    <p>
+      Friend-fee Brew is more than coffee — it's your everyday comfort.
+    </p>
+  </div>
+
+  <div class="history-last-image">
+    <img src="history3.png" alt="Coffee Scene">
+  </div>
+
+</div>
+  </div>
+
+</section>
+
+    </main>
+<div id="transactionPopup" class="popup" style="display:none;">
+  <div class="popup-content">
+    
+    <h2>💳 Transaction History</h2>
+
+    <div id="transactionList"></div>
+
+    <button onclick="closeTransactionHistory()">Close</button>
+  </div>
+</div>
+    <div id="checkoutPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeCheckout()">×</span>
+
+    <h2>🧾 Order Confirmation</h2>
+
+    <!-- USER INFO -->
+    <input type="text" id="customerName" placeholder="Full Name" required><br><br>
+    <input type="text" id="customerAddress" placeholder="Delivery Address" required><br><br>
+    <input type="email" id="customerEmail" placeholder="Email (for receipt)" required><br><br>
+
+    <!-- VOUCHER -->
+    <input type="text" id="voucherCode" placeholder="Enter Voucher Code (WELCOME50)">
+    <button onclick="applyVoucher()">Apply Voucher</button>
+
+    <hr>
+    <!-- ORDER SUMMARY -->
+    <div id="checkout-message"></div>
+
+    <button onclick="confirmOrder()">Confirm Order</button>
+  </div>
+  
+</div>
+
+  <!-- RATING POPUP -->
+ <div id="ratingPopup" class="popup">
+  
+    <div class="rating-container">
+      <span class="close" onclick="closeRating()">X</span>
+      <h2>☕ Rate Friend-fee Brew</h2>
+      <div id="stars">
+        <span class="star" onclick="rate(1)">★</span>
+        <span class="star" onclick="rate(2)">★</span>
+        <span class="star" onclick="rate(3)">★</span>
+        <span class="star" onclick="rate(4)">★</span>
+        <span class="star" onclick="rate(5)">★</span>
+    </div>
+    <input type="text" id="name" placeholder="Your name">
+<textarea id="review" placeholder="Write your review..."></textarea>
+<button onclick="submitReview()">Submit Review</button>
+
+    <h3>Customer Reviews:</h3>
+    <div id="reviewsContainer"></div>
+    </div>
+  </div>
+  
+  
+  <!-- PROMOS POPUP -->
+  <div id="promoPopup" class="popup">
+
+    <div class="popup-content">
+
+      <div class="promo-container" id="promoBox">
+</div>
+
+
+
+
+    </div>
+  </div>
+  
+<!-- Chat Button -->
+<div class="chat-btn" onclick="toggleChat()">💬</div>
+
+<div class="chat-box" id="chatBox">
+  
+  <div class="chat-header">
+    ☕ Coffee Support
+    <span style="font-size:12px;">🟢 Online</span>
+  </div>
+
+  <div class="chat-body" id="chatBody">
+    <div class="bot-msg">
+      👋 Hi! Welcome to FriendFee Brew ☕<br>
+      How can I help you today?
+      <div class="time">Just now</div>
+    </div>
+  </div>
+
+  <!-- ✅ Typing Indicator -->
+  <div id="typing" style="display:none; font-size:12px; padding:5px;">
+    ✍️ Chatbot is typing...
+  </div>
+
+  <div class="chat-footer">
+    <!-- ✅ ENTER KEY FIX INCLUDED -->
+    <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleEnter(event)">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+<section id="contact" class="section1">
+  <h2>Contact Us</h2>
+
+  <form id="contactForm" class="scroll-zoom">
+    <input type="text" name="name" placeholder="Your Name" required><br><br>
+    <input type="email" name="email" placeholder="Your Email" required><br><br>
+    <textarea name="message" class="textarea1" placeholder="Your Message" required></textarea><br><br>
+    <button class="button1 scroll-zoom" type="submit">Send Message</button>
+  </form>
+
+  <div style="margin-top: 20px;">
+    <p>Follow us:</p>
+    <a href="https://www.facebook.com/profile.php?id=61572109598459
+" target="_blank">
+      <img src="facebook.jpg" width="40">
+    </a>
+    <a href="https://www.instagram.com/" target="_blank">
+      <img src="instagram.png" width="40">
+    </a>
+  </div>
+</section>
+
+<!-- SIGN UP POPUP -->
+<div id="signUpPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeSignUp()">×</span>
+    <h2>Create Account</h2>
+
+    <form id="signUpForm">
+      <input type="text" name="full_name" placeholder="Full Name" required><br><br>
+      <input type="text" name="user_name" placeholder="Username" required><br><br>
+      <input type="email" name="email" placeholder="Email" required><br><br>
+      <input type="password" name="password" placeholder="Password" required><br><br>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</div>
+
+<!-- LOGIN POPUP -->
+<div id="loginPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeLogin()">×</span>
+    <h2>Login</h2>
+
+    <form id="loginForm">
+      <input type="text" name="user_name" placeholder="Username" required><br><br>
+      <input type="password" name="password" placeholder="Password" required><br><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+<div id="adminLoginPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeAdminLogin()">×</span>
+    <h2>Admin Login</h2>
+
+    <form id="adminLoginForm">
+      <input type="text" name="user_name" placeholder="Admin Username" required><br><br>
+      <input type="password" name="password" placeholder="Password" required><br><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+<div id="cashierLoginPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeCashierLogin()">×</span>
+    <h2>Cashier Login</h2>
+
+    <form id="cashierLoginForm">
+      <input type="text" name="user_name" placeholder="Cashier Username" required><br><br>
+      <input type="password" name="password" placeholder="Password" required><br><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+
+<div id="ordersSection" class="popup" style="display:none;">
+  <div class="popup-content" id="orders-container">
+    <span class="close" onclick="closeOrders()">×</span>
+    <h2>📦 My Orders</h2>
+    <div id="ordersList">
+      <!-- Orders will be dynamically inserted here via JS -->
+    </div>
+  </div>
+</div>
+  <div id="voucherPopup" class="popup">
+  <div class="popup-content voucher">
+    <span class="close" onclick="closeVoucher()">×</span>
+
+    <h2>☕ Enjoy your coffee time</h2>
+    <p>New User | First Drink 50% OFF</p>
+
+    <div class="voucher-box">
+      <h3>50% OFF</h3>
+    </div>
+
+    <button onclick="useVoucher()">Use Now</button>
+  </div>
+</div>
+<div id="customPopup">
+  <div class="popup-box">
+    
+    <span class="close-btn" onclick="closePopup()">×</span>
+    
+    <div id="popupText"></div>
+
+  </div>
+</div>
+  </div>
+<!-- ================= POS SYSTEM MODAL ================= -->
+<div id="posModal" class="popup" style="display:none;">
+  <div class="popup-content">
+
+    <div class="pos">
+
+      <h2>☕ Cashier Calculator</h2>
+
+      <!-- TOTAL -->
+      <div class="section">
+        <label>Total Amount</label>
+        <input type="number" id="pos_total">
+      </div>
+
+      <!-- DISCOUNT -->
+      <div class="section">
+        <label>Discount (%)</label>
+        <input type="number" id="pos_discount">
+
+        <label>Voucher Code</label>
+        <input type="text" id="pos_voucher" placeholder="WELCOME50 / LESS20">
+
+        <button onclick="pos_calculateTotal()">Calculate Total</button>
+      </div>
+
+      <!-- RESULT -->
+      <div class="result">
+        <p>Discount: ₱<span id="pos_discountAmount">0</span></p>
+        <p>Voucher: ₱<span id="pos_voucherAmount">0</span></p>
+        <p class="final">TOTAL: ₱<span id="pos_finalTotal">0</span></p>
+      </div>
+
+      <!-- PAYMENT -->
+      <div class="section">
+        <label>Cash Received</label>
+        <input type="number" id="pos_cash">
+
+        <button onclick="pos_calculateChange()">Compute Change</button>
+      </div>
+
+      <!-- CHANGE -->
+      <div class="result">
+        <p class="change">Change: ₱<span id="pos_change">0</span></p>
+      </div>
+
+      <!-- PRINT -->
+      <button onclick="pos_printReceipt()">🧾 Print Receipt</button>
+
+      <button onclick="closePOS()">Close</button>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- RECEIPT -->
+<div id="receipt" style="display:none;">
+
+  <h2>☕ Friend-fee Brew</h2>
+  <p id="date"></p>
+
+  <hr>
+
+  <p>Total: ₱<span id="receipt_total">0.00</span></p>
+  <p>Discount: ₱<span id="receipt_discount">0.00</span></p>
+
+  <p><b>Final Total: ₱<span id="receipt_finalTotal">0.00</span></b></p>
+
+  <hr>
+
+  <p>Cash: ₱<span id="receipt_cash">0.00</span></p>
+  <p>Change: ₱<span id="receipt_change">0.00</span></p>
+
+  <hr>
+
+  <p>Thank you for purchasing! ☕</p>
+
+</div>
+
+</div>
+    <script src="web.js"></script>
+  </body>
+  
+    <footer>
+      <p>© Friend-fee Brew Coffee</p>
+    </footer>
+  </html>
+
